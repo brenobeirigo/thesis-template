@@ -1,0 +1,129 @@
+% ### MATH
+
+\RequirePackage{amsmath} % Load amsmath first
+% Formulas and math \checkmark
+\usepackage{amssymb}
+
+% ### FIGURES
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tikz} % For graphs and graphics
+% Simplifies the creation and management of subfigures with individual subcaptions, enhancing the organization and readability of complex illustrations in documents.
+\usepackage{subcaption}
+
+% ### ALGORITHMS
+% linesnumbered: Adds line numbers to the algorithm, which can be helpful for reference and debugging.
+% ruled: Adds a horizontal line above and below the algorithm.
+% vlined: Adds vertical lines to indicate blocks within the algorithm, making it easier to see the structure.
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+% ### TABLES
+% Enhances table formatting by providing thicker horizontal rules, encouraging proper spacing, discouraging vertical rules, and promoting consistent styling for professional and aesthetically pleasing tables.
+\usepackage{booktabs}
+
+\usepackage{makecell} % Allow to break lines inside a table cell
+
+% The "threeparttable" environment creates tables with footnotes attached to specific elements within the table. It's particularly useful when you want to add explanatory notes, references, or comments related to the data or content in the table.
+% Options:
+% - para: formats the table notes as continuous text in one or more paragraphs rather than a vertical list.
+\usepackage[para]{threeparttablex}
+
+
+\usepackage{rotating} % To rotate tables
+\usepackage{pdflscape}
+\usepackage{multirow} % Allow multirow in tables
+
+% Allow multi-column environments
+\usepackage{multicol}
+\setlength\columnsep{40pt}
+
+
+% Generate dummy text
+\usepackage{lipsum}
+
+% Margins
+\usepackage[margin=1in]{geometry}
+
+% Set your language
+\usepackage[english]{babel}
+
+%Specify the character encoding of the input text
+% - Characters from different languages
+% - Special characters
+% - Unicode support
+\usepackage[utf8]{inputenc}
+
+% Pretty fonts
+\usepackage{mathpazo} % Changes the default text font to the "Palatino" typeface
+
+% Bibliography
+% - https://www.utwente.nl/en/service-portal/university-library/referencing-copyright/referencing-plagiarism
+\usepackage[authoryear]{natbib}
+\bibliographystyle{apalike} % Other styles: plain, unsrt, abbrvnat, and apalike.
+
+
+% Allow click-through chapters, sections, and references
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+
+% PDF metadata with table of contents, list of figures, and list of tables clickable
+\hypersetup{
+  pdfauthor={Your Name},
+  pdftitle={Thesis title},
+  pdfkeywords={keyword1, keyword2, keyword3},
+  linktoc=all
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear header and footer
+
+% Header settings
+%\fancyhead[LE,RO]{\thepage} % Page number on the left side for even pages and right side for odd pages
+\fancyhead[LO]{\nouppercase{\leftmark}} % Chapter title on the left side for odd pages (use \rightmark for even pages)
+\fancyhead[RE]{\nouppercase{\rightmark}} % Section/subsection title on the right side for even pages (use \leftmark for odd pages)
+\renewcommand{\headrulewidth}{0.4pt} % Line under the header
+
+% Footer settings (optional, you can leave the footer empty)
+\fancyfoot[C]{\thepage} % Page number in the center of the footer
+\renewcommand{\footrulewidth}{0pt} % Remove the line above the footer
+
+% Redefine plain page style (used for the first page of chapters and other special pages)
+\fancypagestyle{plain}{%
+    \fancyhf{} % Clear header and footer
+    \fancyfoot[C]{\thepage} % Page number in the center of the footer
+    \renewcommand{\headrulewidth}{0pt} % Remove the line under the header
+    \renewcommand{\footrulewidth}{0pt} % Remove the line above the footer
+}
+
+\setlength{\headheight}{14.5pt} % Adjust the headheight to avoid warning messages
+
+\fancypagestyle{SectionFirstPage}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % Use this pagestyle to hide headers on the first page of sections
+
+% Improves document typography through enhanced justification, character protrusion, font expansion, and other micro-typographic adjustments, resulting in increased readability and a more polished appearance
+%\usepackage{microtype}
+
+% Enhanced way to reference and format cross-references TODO
+\usepackage{cleveref}
+\crefname{section}{section}{sections}
+\Crefname{section}{Section}{Sections}
+\crefname{algorithm}{algorithm}{algorithms}
+\crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
+\crefname{chapter}{chapter}{chapters}
+\Crefname{chapter}{Chapter}{Chapters}
+\crefname{table}{table}{tables}
+\Crefname{Table}{Table}{Tables}
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+
+% Allow to work with code
+\usepackage{listings}
+
+% Control the appendix
+\usepackage[title, titletoc, header]{appendix}
+
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+\input{glossaries}
+

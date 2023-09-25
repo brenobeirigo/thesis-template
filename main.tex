@@ -1,0 +1,928 @@
+\documentclass[a4paper, 12pt]{book}
+\input{preamble.tex}
+
+% Package to create cover
+\usepackage{iem}
+
+\hypersetup{
+  pdftitle = {Catalyzing Synergistic Efficiency Gains through Innovative Process Optimization Strategies},
+  pdfauthor = {Student Name}
+}
+
+\coverauthor{Name Surname}
+\firstsupervisor{Dr. First Supervisor Name}
+\secondsupervisor{Dr. Second Supervisor Name}
+\companysupervisor{Company Supervisor Name}
+\companyname{Company name}
+\covertitle{Catalyzing Synergistic Efficiency Gains through Innovative Process Optimization Strategies}
+\doctype{Master Thesis}
+
+\begin{document}
+
+\frontmatter
+
+\makecoverpage
+
+
+\setcounter{page}{0}
+\chapter*{Abstract}
+
+Addressing Company X's complex logistics challenges involving the Vehicle Routing Problem (VRP), this research introduces a tailored solution designed to optimize delivery operations. The VRP presents a formidable task, requiring efficient routing for an extensive fleet of delivery vehicles that profoundly affects transportation costs and customer satisfaction. This study proposes a comprehensive approach that integrates advanced optimization algorithms and real-time data analysis to craft highly efficient vehicle routes, ultimately reducing costs and enhancing delivery services.
+The proposed solution encompasses six key elements. Firstly, route optimization is central, featuring a sophisticated algorithm that considers vehicle capacity, time constraints, and geographical factors to minimize travel distance and maximize resource utilization. Secondly, real-time vehicle monitoring enables dynamic route adjustments, responding promptly to changing conditions such as traffic congestion or unforeseen delays, ensuring timely deliveries.
+Enhancing the customer experience constitutes the third aspect, providing precise delivery time estimates and bolstering reliability to elevate customer satisfaction, cultivate loyalty, and enhance Company X's reputation. Efficient resource allocation forms the fourth cornerstone, with an intelligent system optimizing delivery assignments, minimizing idle time, and maximizing resource utilization.
+Additionally, the solution contributes to environmental sustainability, aligning with Company X's eco-conscious objectives. By reducing fuel consumption and minimizing the organization's carbon footprint, it furthers sustainability goals. Economically, the solution emphasizes cost efficiency, with preliminary assessments indicating substantial savings through optimized routes, reduced fuel consumption, and improved resource management.
+In conclusion, this research envisions a transformative impact on Company X's logistics and supply chain operations, positioning the company as an industry leader. Successful implementation has the potential to significantly reduce operational costs, enhance overall efficiency, fortify Company X's competitive edge, and advance environmental responsibility and customer satisfaction.
+
+\chapter*{Management Summary}
+
+This management summary provides an overview of the MSc thesis, which addresses the Vehicle Routing Problem (VRP) specific to the operational challenges faced by Company X.
+
+\section*{Objective}
+The primary objective of this MSc thesis is to develop a tailored solution for optimizing the distribution of goods and services, with a focus on reducing transportation costs and enhancing operational efficiency for Company X.
+
+\section*{Key Findings}
+\begin{enumerate}
+    \item \textbf{Current Challenges:} Extensive analysis revealed several challenges in the existing route planning and vehicle allocation processes at Company X.
+    \item \textbf{Cost Impact:} High transportation costs have been a significant contributor to reduced profitability.
+    \item \textbf{Customer Service:} Frequent delays and missed deliveries have led to declining customer satisfaction.
+\end{enumerate}
+
+\section*{Proposed Solution}
+The MSc thesis proposes a comprehensive solution that integrates advanced optimization techniques and innovative technologies to address the VRP for Company X.
+
+\section*{Solution Components}
+\begin{enumerate}
+    \item \textbf{Route Optimization Algorithm:} A customized route optimization algorithm will be developed to minimize route distances, reduce fuel consumption, and improve delivery times.
+    \item \textbf{Fleet Management Strategy:} Recommendations for optimizing the vehicle fleet will be provided, considering factors such as capacity, fuel efficiency, and maintenance costs.
+    \item \textbf{Real-Time Tracking and Monitoring:} Implementation of real-time GPS tracking and monitoring systems to provide better visibility and control over routes and deliveries.
+    \item \textbf{Driver Training Program:} Development of a driver training program focusing on efficient route planning, customer interaction, and safety.
+    \item \textbf{Customer Communication Enhancements:} Improved communication with customers, including real-time delivery updates and flexible rescheduling options.
+\end{enumerate}
+
+\section*{Expected Outcomes}
+Implementation of the proposed solution is expected to result in:
+\begin{itemize}
+    \item Substantial cost savings, potentially in the range of \$X million annually.
+    \item A significant reduction in delivery times, estimated at X\%.
+    \item An improved on-time delivery rate to enhance customer satisfaction.
+\end{itemize}
+
+\section*{Challenges and Risks}
+\begin{itemize}
+    \item The implementation process may face challenges related to software integration, change management, and potential resistance from drivers.
+    \item External factors such as fuel price fluctuations and traffic conditions could impact results.
+\end{itemize}
+
+\section*{Next Steps}
+\begin{itemize}
+    \item A cross-functional team will be formed to oversee the implementation of the proposed solution.
+    \item A detailed implementation plan with clear milestones and timelines will be developed.
+    \item Budget approval and resource allocation for the project will be secured.
+\end{itemize}
+
+\section*{Executive Summary Highlights}
+\begin{itemize}
+    \item The MSc thesis proposes a tailored solution to address the VRP at Company X, emphasizing cost reduction, improved customer satisfaction, and enhanced operational efficiency.
+    \item Potential benefits include substantial cost savings and faster, more reliable deliveries.
+\end{itemize}
+
+\section*{Conclusion}
+Solving the VRP is imperative for Company X to remain competitive, reduce costs, and enhance customer service. The potential benefits far outweigh the challenges associated with implementation.
+
+
+\clearpage \thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Preface}
+
+Dear reader,\\
+
+\noindent 
+\lipsum[2-4]
+\\
+
+\hspace*{\fill} \textit{Name Surname}
+
+\hspace*{\fill} \textit{City}
+
+\hspace*{\fill} \textit{\today}
+
+
+\clearpage \thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frontmatter
+\tableofcontents
+% \cleardoublepage - Ensure the next content starts on a right-hand page
+% \phantomsection -  Create a target for hyperlinks and bookmarks
+% \addcontentsline - Manually add the chapter to the table of contents
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Acronyms}
+\printglossary[type=\acronymtype,title=Acronyms]
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Glossary}
+\printglossary[title=Glossary]
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Listings}
+\lstlistoflistings
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\listofalgorithms
+
+% Content
+
+
+\mainmatter
+\chapter{Introduction}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+
+In this introductory chapter, we provide a comprehensive overview of the context, objectives, and structure of this MSc thesis. \Cref{sec:background_context} discusses the background and context of the research, highlighting the importance of optimizing vehicle routing in modern business operations. The problem statement, outlining the specific challenges faced by Company X and the research objectives, is presented in \Cref{sec:problem_statement}. We outline the main research question (RQ1) and sub-research questions (RQ2 to RQ6) in \Cref{sec:research_questions}, aligning them with the content of subsequent chapters. Furthermore, we emphasize the significance of this study in addressing real-world logistics challenges in \Cref{sec:significance_study}. The research objectives are introduced in \Cref{sec:research_objectives}, providing a clear roadmap for the specific goals of this study, while \Cref{sec:scope_limitations} acknowledges the scope and limitations of the research. Finally, \Cref{sec:thesis_outline} outlines the organization of this chapter, giving readers an overview of the structure and content they can expect in the following sections, including the literature review, problem formulation, and research methodology.
+
+
+
+\section{Background and Context} \label{sec:background_context}
+
+The optimization of logistics and transportation processes plays a crucial role in the success and competitiveness of modern businesses. Efficient vehicle routing is essential for reducing operational costs, minimizing environmental impact, and improving customer satisfaction. In this context, the Vehicle Routing Problem (VRP) has emerged as a fundamental combinatorial optimization problem with widespread applications in various industries.
+
+Company X, a leading player in the field of [briefly describe the industry of Company X], faces significant challenges in its daily operations related to transportation and delivery. These challenges include optimizing the allocation of vehicles, determining optimal routes, and ensuring timely and cost-effective delivery of goods to its customers. To address these challenges, this Master's thesis focuses on developing a solution to a specific variant of the VRP tailored to the unique requirements and constraints of Company X.
+
+\section{Problem Statement} \label{sec:problem_statement}
+
+The primary objective of this thesis is to design and implement an efficient solution to the VRP variant faced by Company X. The specific problem can be formulated as follows:
+
+[Provide a clear and concise problem statement, including key parameters and constraints relevant to Company X's VRP variant.]
+
+\section{Research Objectives} \label{sec:research_objectives}
+
+The research objectives of this thesis are as follows:
+
+\begin{enumerate}
+    \item To conduct a comprehensive literature review of existing VRP variants and solution approaches, with a focus on those applicable to Company X's specific requirements.
+    \item To analyze and model the VRP variant at Company X, taking into account factors such as vehicle capacity constraints, delivery time windows, and geographical considerations.
+    \item To develop an efficient algorithm or methodology tailored to solving Company X's VRP variant, aiming to minimize transportation costs and improve delivery efficiency.
+    \item To implement and test the proposed solution using real-world data provided by Company X, and to evaluate its performance against relevant benchmarks.
+    \item To provide practical recommendations and insights to Company X based on the results obtained, with the goal of optimizing their transportation and delivery processes.
+\end{enumerate}
+
+\section{Research Questions} \label{sec:research_questions}
+
+To guide this research, the following research questions are formulated:
+
+\subsection{Main Research Question}
+
+\textbf{RQ1:} What is the most efficient and effective solution to Company X's VRP variant, considering its unique constraints and objectives?
+
+\subsection{Sub-Research Questions}
+
+Each chapter of this thesis corresponds to a sub-research question aimed at addressing specific aspects of the main research question. These sub-research questions are as follows:
+
+\begin{enumerate}
+    \item \textbf{Chapter 2: Literature Review}
+    \begin{itemize}
+        \item \textbf{RQ2:} What are the key concepts, algorithms, and methodologies related to the VRP and its variants?
+    \end{itemize}
+    
+    \item \textbf{Chapter 3: Problem Formulation}
+    \begin{itemize}
+        \item \textbf{RQ3:} How can Company X's VRP variant be formally defined, including its parameters, constraints, and objectives?
+    \end{itemize}
+    
+    \item \textbf{Chapter 4: Solution Methodology}
+    \begin{itemize}
+        \item \textbf{RQ4:} What algorithm or methodology can be developed to solve Company X's VRP variant efficiently and effectively?
+    \end{itemize}
+    
+    \item \textbf{Chapter 5: Experimental Evaluation}
+    \begin{itemize}
+        \item \textbf{RQ5:} How does the proposed solution perform when applied to real-world data from Company X, and how does it compare to relevant benchmarks?
+    \end{itemize}
+    
+    \item \textbf{Chapter 6: Discussion and Recommendations}
+    \begin{itemize}
+        \item \textbf{RQ6:} What are the practical implications of the results obtained, and what recommendations can be made to Company X for optimizing their transportation and delivery processes?
+    \end{itemize}
+\end{enumerate}
+
+\section{Significance of the Study} \label{sec:significance_study}
+
+The successful resolution of Company X's VRP variant can have a significant impact on the company's operations by reducing transportation costs, improving delivery efficiency, and enhancing customer satisfaction. Additionally, this research contributes to the broader field of combinatorial optimization and logistics by addressing a real-world problem with practical implications.
+
+\section{Scope and Limitations} \label{sec:scope_limitations}
+
+It is important to acknowledge the scope and limitations of this thesis. While we aim to provide a comprehensive solution to Company X's VRP variant, certain simplifications or assumptions may be necessary due to the complexity of the problem and data availability.
+
+\section{Thesis Structure} \label{sec:thesis_outline}
+
+This thesis is structured as follows:
+
+\begin{itemize}
+    \item \textbf{Chapter 2: Literature Review} - This chapter provides an in-depth review of the existing literature related to the VRP and its variants, as well as relevant solution approaches and algorithms.
+    \item \textbf{Chapter 3: Problem Formulation} - In this chapter, we formally define the VRP variant faced by Company X, specifying its parameters, constraints, and objectives.
+    \item \textbf{Chapter 4: Solution Methodology} - This chapter presents the algorithm or methodology developed to address the problem, including mathematical formulations and implementation details.
+    \item \textbf{Chapter 5: Experimental Evaluation} - Here, we discuss the experimental setup, data collection, and results obtained from testing the proposed solution on Company X's data.
+    \item \textbf{Chapter 6: Discussion and Recommendations} - This chapter analyzes the results, discusses the implications, and provides practical recommendations for Company X.
+    \item \textbf{Chapter 7: Conclusion} - The final chapter summarizes the key findings, contributions, and future research directions.
+\end{itemize}
+
+
+\clearpage
+
+\section{Summary}
+
+This chapter has introduced the context, problem statement, research objectives, and research questions of this MSc thesis. The optimization of vehicle routing, particularly in the context of Company X's specific VRP variant, represents a challenging yet crucial problem in logistics and operations research. The subsequent chapters will delve into the details of this problem and the proposed solution.
+
+
+% End of Introduction chapter
+\clearpage
+
+\chapter{Problem Context}
+\label{chap:problem_context}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+
+In this chapter, we explore Company X's operations, driven by a commitment to quality and customer satisfaction in the [industry] industry. Company X maintains an extensive customer base across the [geographical region], necessitating the management of a complex supply chain. We examine the pivotal role of this supply chain in delivering a diverse array of products, including [product categories], to meet the demands of Company X's clients (\Cref{sec:company_background}). We step into the world of Company X's logistics and transportation network (\Cref{sec:company_background}), where a fleet of vehicles actively transports goods from strategically located distribution centers to various customer locations. These distribution centers serve as essential hubs, actively managing inventory, facilitating order fulfillment, and dispatching vehicles to ensure a streamlined operation. However, as we delve deeper, we uncover the challenges that Company X actively faces in its transportation and delivery operations (\Cref{sec:challenges_transportation}). As these challenges converge, they actively give rise to a distinct and intricate variant of the Vehicle Routing Problem (VRP), tailored specifically to Company X (\Cref{sec:vrp_company_x}). We delve into the complexity of this VRP variant, where optimization actively extends beyond vehicle allocation and route determination to encompass capacity constraints, time window adherence, cost minimization, and active efforts to reduce environmental impact. The active resolution of this unique VRP variant is the key to enhancing operational efficiency and actively fortifying Company X's competitive edge in the [industry] industry.
+
+
+\section{Company X: Background and Operations}
+\label{sec:company_background}
+
+Company X is a prominent player in the [industry] industry, known for its commitment to quality and customer satisfaction. With a large customer base spread across [geographical region], Company X operates a complex supply chain that involves the delivery of goods to a diverse set of customers. These goods encompass a wide range of products, including [product categories], and are crucial to meeting the demands of Company X's clients.
+
+The logistics and transportation network of Company X is extensive, comprising a fleet of vehicles that are responsible for transporting goods from multiple distribution centers to various customer locations. These distribution centers serve as hubs for managing inventory, order fulfillment, and vehicle dispatching.
+
+\section{Challenges in Transportation and Delivery}
+\label{sec:challenges_transportation}
+
+Despite its reputation for excellence, Company X faces several significant challenges in its transportation and delivery operations:
+
+\subsection{High Variability in Demand}
+\label{subsec:variability_demand}
+
+One of the primary challenges is the high variability in customer demand. Orders can vary greatly in terms of quantity, size, and urgency, making it difficult to allocate vehicles efficiently and schedule deliveries optimally.
+
+\subsection{Geographical Complexity}
+\label{subsec:geographical_complexity}
+
+The geographical area covered by Company X's operations is expansive, encompassing diverse terrains, urban areas, and remote regions. Navigating through these diverse landscapes poses challenges in route planning and optimization.
+
+\subsection{Capacity Constraints}
+\label{subsec:capacity_constraints}
+
+The fleet of vehicles at Company X has diverse capacity constraints, including different types of vehicles with varying load capacities. Ensuring that each delivery is assigned to an appropriate vehicle while optimizing overall fleet utilization is a complex task.
+
+\subsection{Delivery Time Windows}
+\label{subsec:delivery_time_windows}
+
+Many customers of Company X have strict delivery time windows, which must be adhered to for customer satisfaction and operational efficiency. Missing these time windows can lead to penalties and service disruptions.
+
+\subsection{Environmental Considerations}
+\label{subsec:environmental_considerations}
+
+Company X is committed to reducing its environmental footprint. Minimizing the carbon emissions associated with transportation is a priority, and any solution developed must consider environmental impact.
+
+\section{The Vehicle Routing Problem at Company X}
+\label{sec:vrp_company_x}
+
+The challenges outlined above give rise to a unique variant of the Vehicle Routing Problem (VRP) specific to Company X. This variant involves optimizing the allocation of vehicles, determining optimal routes, considering vehicle capacity constraints, adhering to delivery time windows, and minimizing transportation costs, all while aiming to reduce environmental impact. Solving this problem is paramount to enhancing the efficiency and competitiveness of Company X's operations.
+
+\section{Summary}
+\label{sec:summary_context}
+
+This chapter has provided an in-depth understanding of the problem context by introducing "Company X" and highlighting the challenges it faces in its transportation and delivery operations. The unique variant of the VRP that we seek to address in this study is deeply rooted in the operational intricacies of Company X. In the following chapters, we will delve into the formulation and solution of this variant, aiming to provide a tailored solution that optimizes vehicle routing while addressing the specific constraints and objectives of Company X.
+
+\clearpage
+
+\chapter{Literature Study}
+\label{chap:literature-study}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+
+This chapter provides a comprehensive review of the existing literature related to the Vehicle Routing Problem (VRP) and its various variants. The purpose of this literature study is to set the stage for understanding and addressing the VRP variant encountered at Company X, as discussed in subsequent sections.
+
+In Section~\ref{sec:vrp-fundamentals}, we will establish the foundational concepts and principles of the VRP, laying the groundwork for a deeper exploration of the problem. We will then move on to Section~\ref{sec:existing-approaches}, where we will examine existing approaches and methodologies used to solve VRP and its variants. By understanding these existing solutions, we can better appreciate the challenges and opportunities in addressing Company X's unique VRP variant.
+
+Section~\ref{sec:company-x-variant} will provide a detailed description of the specific VRP variant encountered at Company X. It is essential to understand the unique constraints and objectives that define this variant, as this knowledge will guide our approach towards developing a tailored solution.
+
+In Section~\ref{sec:related-work}, we will review related work in the literature that addresses similar VRP variants. This comparative analysis will help us draw insights and lessons from prior research, informing our strategy for addressing Company X's VRP variant.
+
+This literature study aims to equip us with the necessary background knowledge and contextual understanding to develop a customized solution for Company X, as discussed in subsequent chapters.
+
+
+\section{Fundamentals of the Vehicle Routing Problem}
+\label{sec:vrp-fundamentals}
+
+In this section, we present an overview of the basic concepts and fundamental principles of the \acrfull{vrp}. We discuss the key elements, such as the problem formulation, objectives, constraints, and various VRP variants that have been studied in the literature. This foundational knowledge is essential for understanding the context in which Company X's specific VRP variant operates.
+
+In the field of logistics and transportation, the \acrshort{vrp} is a well-known problem. It involves optimizing the routes of a fleet of vehicles to deliver goods to a set of \acrshort{customer}s. The \acrshort{dvrp}, a variant of the \acrshort{vrp}, additionally considers the pickup and drop-off of \gls{customer}s.
+
+A key challenge in solving the \acrshort{vrp} is finding a \gls{feasible-solution} that minimizes the total travel distance while adhering to various constraints. The term \gls{route} refers to the sequence of locations visited by a vehicle during a VRP solution. The \acrshort{mvrp} deals with multiple vehicles in the problem, while the \acrshort{vrptw} introduces time windows for deliveries.
+
+The \acrshort{tsp}, although related to the \acrshort{vrp}, focuses on finding the shortest route for a salesman visiting a set of locations.
+
+The \acrshort{vrp} and its variants, including the \acrshort{dvrp}, \acrshort{mvrp}, and \acrshort{vrptw}, are fundamental problems in the field of operations research and logistics.
+
+
+
+\section{Existing Approaches to VRP and Variants}
+\label{sec:existing-approaches}
+
+In this section, we provide an in-depth exploration of the existing approaches and methodologies that have been proposed to tackle various aspects of the Vehicle Routing Problem (VRP) and its numerous variants. We categorize these approaches into different subsections based on their nature and characteristics.
+
+\subsection{Exact Solution Methods}
+\label{subsec:exact-solutions}
+
+Exact solution methods are algorithms that guarantee an optimal solution to the VRP or its variants. In this subsection, we review a range of exact solution approaches that have been developed, including mathematical programming techniques, branch-and-bound algorithms, and integer linear programming formulations.
+
+\subsection{Heuristic and Metaheuristic Methods}
+\label{subsec:heuristic-metaheuristic}
+
+Heuristic and metaheuristic methods provide efficient approximations to VRP solutions, often in situations where exact solutions are computationally infeasible. In this subsection, we delve into various heuristic methods such as nearest neighbor, savings algorithm, and Clarke-Wright savings heuristic, as well as metaheuristic approaches like genetic algorithms, simulated annealing, and tabu search.
+
+\subsection{Hybrid Approaches}
+\label{subsec:hybrid-approaches}
+
+Hybrid approaches combine elements of both exact and heuristic/metaheuristic methods to achieve high-quality solutions with reduced computational overhead. We explore how hybridization techniques have been employed in VRP and its variants, including hybridizations of mathematical programming with heuristics and metaheuristics.
+
+\subsection{Specialized Algorithms for VRP Variants}
+\label{subsec:specialized-algorithms}
+
+Certain VRP variants come with unique characteristics that necessitate specialized algorithms. In this subsection, we investigate specialized algorithms designed to address specific VRP variants, such as the Capacitated VRP, Time-Window VRP, Multi-Objective VRP, and Stochastic VRP.
+
+\subsection{Software and Tools}
+\label{subsec:software-tools}
+
+The availability of software packages and tools plays a crucial role in solving VRP and its variants. We provide an overview of popular software solutions and optimization libraries commonly used by researchers and practitioners in the field of vehicle routing.
+
+By categorizing and discussing existing approaches in these subsections, we aim to gain a comprehensive understanding of the state-of-the-art methodologies and techniques that can inform our approach to addressing Company X's unique VRP variant.
+
+
+\section{Company X's VRP Variant}
+\label{sec:company-x-variant}
+
+This section provides a detailed description of the specific VRP variant encountered at Company X. We outline the unique characteristics, constraints, and objectives that distinguish it from traditional VRP. Understanding the intricacies of Company X's VRP variant is crucial for tailoring a solution that aligns with the company's operational needs.
+
+\section{Related Work in Addressing Similar VRP Variants}
+\label{sec:related-work}
+
+In this section, we review prior research that has addressed VRP variants with similarities to Company X's problem. We explore studies in the same industry or domain and analyze the approaches and techniques employed to solve analogous routing challenges. Drawing insights from these related works can provide valuable guidance for developing a solution tailored to Company X's needs. \Cref{tab:lit_review} presents the related literature.
+
+\newpage
+%\thispagestyle{SectionFirstPage} % If you want to remove the header and footer
+
+\begin{landscape}
+  % \setlength\extrarowheight{1pt} % provide a bit more vertical whitespace
+  \centering
+  \footnotesize
+  \begin{threeparttable} % Allows adding notes using \tnotes
+  \captionsetup{size=footnotesize}
+  \caption{A literature review table.\label{tab:lit_review}}
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{ l c c c c c c c c }
+    
+    \toprule
+    \multirow{2}{*}{Paper} & \multicolumn{4}{c}{Effect of} & \multirow{2}{*}{Outcome measure(s)} & \multirow{2}{*}{Variable control} & \multirow{2}{*}{Something else} & \multirow{2}{*}{Sample size} \\
+    & var a & var b & var c & var d & & & & \\
+    \midrule
+    \multicolumn{9}{l}{\textit{First category}} \\
+    \cite{surname2000placeholder} & & \checkmark & \checkmark & & lorem ipsum & \checkmark & & 125,000 \\
+    \cite{surname2001placeholder} &  &  &  &  & dolor sit amet & & \checkmark & 50M \\
+    \cite{surname2004placeholder} & \checkmark & \checkmark &  &  & \# gravida consequat & &  & 101 \\
+    \cite{surname2005placeholder} & \checkmark &  & \checkmark &  & –\tnote{a} & \checkmark & \checkmark & 51,000 \\
+    \cite{surname2006placeholder} & \checkmark &  &  &  & enim a nibh cursus & \checkmark &  & 10,892 \\
+    [0.5em] % Space before a sub-category
+    \multicolumn{9}{l}{\textit{Second category}} \\
+    \cite{surname2007placeholder} & \checkmark &  & \checkmark &  & –\tnote{b} &  &  & 2,500 \\
+    \cite{surname2008placeholder} & \checkmark &  &  &  & –\tnote{b} &  &  & 76,177 \\
+    [0.5em] % Space before a sub-category
+    \multicolumn{9}{l}{\textit{Third category}} \\
+    \cite{surname2010placeholder} & \checkmark &  & \checkmark & \checkmark & lectus metus & \checkmark &  & \makecell{10M x,\\5.96M y} \\
+    \cite{surname2009placeholder} & \checkmark & \checkmark &  &  & faucibus auctor odio vitae & \checkmark &  & \makecell{275,332 x,\\1,490 y,\\2,708 z} \\
+    \cite{surname2011placeholder} &  &  & \checkmark &  & –\tnote{c} & \checkmark &  & 60 \\
+    \cite{surname2012placeholder} &  &  &  &  & –\tnote{d} & \checkmark & \checkmark & \makecell{1,992,758 x,\\514,130 y} \\
+    \cite{surname2013placeholder} &  &  & \checkmark &  & –\tnote{d} & \checkmark & \checkmark & 29,057 \\
+    \cite{surname2014placeholder} &  &  &  &  & –\tnote{e} & \checkmark &  & \makecell{60,370 +\\781,186 x} \\
+    \cite{surname2015placeholder} & \checkmark & \checkmark &  &  & vulputate ipsum & \checkmark &  & 40,000 \\
+    \cite{surname2016placeholder} & \checkmark & \checkmark &  &  & euismod, \# tortor & \checkmark &  & \makecell{2,329,760 x,\\640,134 y,\\18,518 z} \\
+    \textsc{This paper} & \checkmark &  & \checkmark & \checkmark & euismod, \# tortor & \checkmark &  & 21,337,037 \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}
+\item[a]{A footnote.}
+\item[b]{Another one.}
+\item[c]{Still a footnote.}
+\item[d]{Yet another one.}
+\item[e]{Guess what I am.}
+\end{tablenotes}
+\end{threeparttable}
+\end{landscape}
+
+
+\section{Summary}
+\label{sec:literature-summary}
+
+This chapter has presented a comprehensive literature study on the Vehicle Routing Problem (VRP) and its variants, with a specific focus on Company X's unique VRP variant. We have explored the fundamentals of VRP, reviewed existing approaches, discussed the characteristics of Company X's problem, and examined related work in addressing similar VRP variants. The knowledge acquired from this literature study will inform the development of a customized solution to address Company X's VRP challenges, as discussed in subsequent chapters.
+
+\clearpage
+
+\chapter{Problem Description}
+\label{chap:problem-description}\thispagestyle{SectionFirstPage}
+
+In this chapter, we provide a comprehensive and detailed exposition of the Vehicle Routing Problem (VRP) variant encountered by Company X. The chapter is organized into three sections: "Assumptions" (\Cref{sec:assumptions}), "Definition" (\Cref{sec:definition}), and "Example" (\Cref{sec:example}). These sections collectively offer an in-depth understanding of the problem's scope, context, objectives, and complexities.
+
+\section{Assumptions}
+\label{sec:assumptions}
+
+The "Assumptions" section outlines the foundational assumptions that underpin our problem formulation. These assumptions are crucial for delineating the problem's boundaries and simplifications, facilitating a clear understanding of the problem's context. Key assumptions include:
+
+\begin{itemize}
+    \item \textbf{Homogeneous Fleet}: We assume a fleet of homogenous vehicles with identical capacities and performance characteristics.
+    
+    \item \textbf{Static Demand}: We consider a scenario with static customer demand, where customer orders do not change during the course of the day.
+    
+    \item \textbf{Time Windows}: Customers may have specified time windows during which deliveries can be made.
+    
+    \item \textbf{Single Depot}: Company X operates from a single central depot as the starting and ending point for all vehicles.
+    
+    \item \textbf{Euclidean Distances}: Distances between customer locations are calculated using Euclidean metrics.
+    
+    \item \textbf{No Split Deliveries}: We do not allow the splitting of customer deliveries across multiple vehicles.
+\end{itemize}
+
+These assumptions provide a foundation for defining and modeling the VRP variant.
+
+\section{Definition}
+\label{sec:definition}
+
+The "Definition" section precisely defines the VRP variant, elucidating its objectives, constraints, and relevant parameters. It serves as a crucial reference point for understanding the intricacies of the problem. The problem is defined as follows:
+
+\subsection{Problem Objectives}
+The primary objectives of the VRP variant faced by Company X include:
+
+- \textbf{Minimizing Total Transportation Costs}: The goal is to optimize vehicle routing to minimize the overall transportation costs, which may include fuel costs, vehicle maintenance, and driver labor costs.
+
+- \textbf{Maximizing Customer Service Level}: While minimizing costs, it is essential to ensure high-quality customer service. This entails meeting customer demand within specified time windows and minimizing delivery delays.
+
+\subsection{Problem Parameters}
+The problem is characterized by several parameters, including:
+
+- \textbf{Customer Locations}: The locations of customer delivery points within the operational area.
+
+- \textbf{Customer Demand}: The quantity of goods that each customer requires for delivery.
+
+- \textbf{Vehicle Capacities}: The maximum load capacity of each vehicle.
+
+- \textbf{Time Windows}: The time windows during which deliveries must be made to each customer.
+
+- \textbf{Depot Location}: The location of the central depot from which all vehicles start and end their routes.
+
+- \textbf{Distance Matrix}: A matrix detailing the distances between all pairs of customer locations, typically calculated using Euclidean distances.
+
+These parameters collectively define the problem and its complexity.
+
+\section{Mathematical Formulation}
+\label{sec:mathematical-formulation}
+
+The foundation of our solution lies in the development of a rigorous mathematical formulation for the VRP variant. In this subsection, we outline the objective function, decision variables, and constraints that constitute the optimization problem. We provide a clear mathematical representation that captures the essence of the problem and prepares it for algorithmic solutions.
+
+\begin{align}
+\text{Minimize:} & \quad \sum_{i \in N} \sum_{j \in N, j \neq i} c_{ij} \cdot x_{ij} && \tag{Objective} \label{eq:objective-function} \\
+\text{Subject to:} \nonumber \\
+& \sum_{i \in N} x_{ij} = 1, && \forall j \in N, j \neq 0 \tag{Demand} \label{eq:demand-constraint} \\
+& \sum_{j \in N, j \neq i} d_i \cdot x_{ij} \leq Q, && \forall i \in N \tag{Capacity} \label{eq:vehicle-capacity} \\
+& \sum_{i \in N, i \neq j} x_{ij} - \sum_{k \in N, k \neq j} x_{jk} = 0, && \forall j \in N, j \neq 0 \tag{Flow} \label{eq:flow-conservation} \\
+& x_{ij} \in \{0, 1\}, && \forall i, j \in N, i \neq j \tag{Binary} \label{eq:binary-variables} \\
+& \sum_{i \in N} x_{i0} = n, && \forall j \in N, j \neq 0 \tag{Depot} \label{eq:depot-requirement}
+\end{align}
+
+
+The objective of the Vehicle Routing Problem (VRP) is to minimize the total transportation cost, as represented by the objective function $\sum_{i \in N} \sum_{j \in N, j \neq i} c_{ij} \cdot x_{ij}$, where $c_{ij}$ denotes the cost of traveling from node $i$ to node $j$, and $x_{ij}$ is a binary decision variable indicating the route choice. Subject to the demand constraints \eqref{eq:demand-constraint}, which ensures that each customer node is visited exactly once, the vehicle capacity constraints \eqref{eq:vehicle-capacity} that restrict the cumulative demand on each vehicle route to the vehicle's capacity, the flow conservation constraints \eqref{eq:flow-conservation} balancing the flow of goods at each customer node, and the binary variable \cref{eq:binary-variables} governing the usage of arcs in vehicle routes. Additionally, the depot requirement constraints \eqref{eq:depot-requirement} guarantee that exactly $n$ vehicles depart from and return to the depot, with $n$ being the total number of available vehicles. These constraints collectively define the VRP optimization problem, enabling the determination of efficient vehicle routes while respecting capacity and demand considerations.
+
+
+\section{Example}
+\label{sec:example}
+
+Unlike with linear functions, we use a sequence of numbers to describe the slopes of the value function, $\left\{\hat{v}_{i t}(1), \hat{v}_{i t}(2), \ldots, \hat{v}_{i t}\left(|R| \right)\right\}$, where $\hat{v}_{it}(y)$ is the slope of $\hat{V}_{it}$ over $(y-1,y)$ and $|R|$ denotes the total fleet size.
+To concretely illustrate the practical implications and challenges of the VRP variant, we present an illustrative example in the "Example" section. This example is representative of a real-world scenario faced by Company X and incorporates the problem's complexities. Key elements of the example include:
+
+- \textbf{Customer Locations}: A list of customer locations with specific coordinates.
+
+- \textbf{Customer Demand Profiles}: The demand profiles of each customer, indicating the quantity of goods required.
+
+- \textbf{Vehicle Capacities}: The maximum load capacities of the delivery vehicles.
+
+- \textbf{Time Windows}: Time windows during which deliveries must be made to each customer.
+
+- \textbf{Depot Location}: The coordinates of the central depot.
+
+This illustrative example provides readers with a tangible representation of the problem, showcasing the challenges involved in optimizing vehicle routing while meeting customer demands and operational constraints.
+
+\section{Summary}
+\label{sec:summary}
+
+In summary, this chapter has presented a comprehensive description of the VRP variant faced by Company X. We began by outlining the key assumptions that define the problem's scope and context. We then provided a precise definition of the problem, specifying its objectives and parameters. Finally, we illustrated the practical implications of the problem through an example. This chapter sets the stage for the subsequent exploration of solution methodologies and experimental evaluations, providing a solid foundation for addressing Company X's logistics challenges.
+
+\clearpage
+
+\chapter{Solution Approach}
+\label{chap:solution-approach}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+
+In this chapter, we delve into the methodology and strategies employed to tackle Company X's Vehicle Routing Problem (VRP) variant. Our approach is structured into several key subsections, each addressing a specific aspect of the solution development and implementation.
+
+\section{Algorithm Selection}
+\label{sec:algorithm-selection}
+
+Selecting an appropriate algorithm is pivotal for solving complex optimization problems like the VRP variant. In this subsection, we discuss the rationale behind our choice of algorithm(s). We explore the suitability of exact optimization methods, metaheuristic algorithms, or hybrid approaches, considering factors such as problem size, computational resources, and solution quality. In \Cref{alg:example1},  you can see an example of how to create a pseudocode.
+
+\section{Metaheuristic Design}
+\label{sec:metaheuristic-design}
+
+For many real-world logistics problems, metaheuristic algorithms offer efficient and effective solutions. In this subsection, we provide a detailed description of the metaheuristic(s) designed or adopted for our VRP variant. We delve into algorithmic components, parameter settings, and any innovations tailored to address the specific challenges posed by Company X's logistics operations.
+
+\begin{algorithm}
+		\caption{Algorithm example for ERTV graph construction}
+		\label{alg:example1}
+		\DontPrintSemicolon
+		\SetKwFunction{getVisitingPlans}{getVisitingPlans}
+		\SetKwFunction{updateERTV}{addVisitingPlansToERTV}
+		\SetKwFunction{minWaitingPlan}{minWaitingPlan}
+		\SetKwFunction{addFeasiblePlansFromRequests}{addFeasiblePlansFromRequests}
+		\SetKwInput{KwOutput}{Output}
+		\SetKwInput{KwInput}{Input}
+		\SetKwComment{tcp}{//}{}
+		\SetKwProg{Fn}{Function}{}{}
+		\SetSideCommentRight
+		{\footnotesize
+			
+			
+			\KwInput{
+				RV graph from period $t$ with request-request (RR) edges $e(r_i, r_j)$ with $i,j \in P_t$ and vehicle-request (RV) edges $e(r_i, k)$ with $i\in P_t$ and $k \in K$.
+			}
+			\KwOutput{
+				ERTV graph with request and v-node edges  $e(r_i,v,\delta_{iv})$ and v-node and vehicle edges $e(v, k, \Delta_{v})$.
+			}
+			
+			\Fn{\getVisitingPlans{$k, \mathcal{R}$}}{
+				$V = \emptyset$\;
+				$V \gets v^k_g$ \tcp*[r]{Min. total delay}
+				
+				\For{$c \in \{c_i \mid r_i \in \mathcal{R}\}$}{
+					$V \gets v^k_c$ \tcp*[r]{Min. total delay for class $c$}
+				}
+				\KwRet{$V$}\;
+			}
+			
+			\Fn{\updateERTV{$V$}}{
+				Add request and v-node edge $e(r_i,v,\delta_{iv}) \; \forall r_i \in \mathcal{R}, \;\forall v \in V$\;
+				Add v-node and vehicle edge  $e(v, k, \Delta_{v})\; \forall v \in V$\;
+			}
+			
+			\Fn{\addFeasiblePlansFromRequests{$R^k_q, k,R'$}}{
+				\For{$\mathcal{R} \in R'$}{
+					$V = $ \getVisitingPlans{$k, \mathcal{R}$}\;
+					\If{$V \neq \emptyset$}{
+						$R^k_q \gets \mathcal{R}$\;
+						\updateERTV{$V$}\;
+					}
+				}
+			}
+			\Begin{
+				\For{$k \in K$}{
+					\updateERTV{$\{v^k_{\text{stop}}, v^k_{\text{idle}}\}$}\;
+					$R^k_q = \emptyset \; \forall q \in \{1,2,\dots,Q^k\}$\;
+					$R' = \{\{r_i\} \mid \forall e(r_i,k) \in \text{RV graph}\}$ \tcp*[r]{Candidate one-request trips}
+					\addFeasiblePlansFromRequests{$R^k_1, k, R'$}\;
+					$R' = \{\{r_i, r_j\} \mid \forall r_i, r_j \in R^k_1\}$\tcp*[r]{Candidate two-request trips}
+					$R' = \{\mathcal{R} \mid \forall \,\mathcal{R} \in R' \land e(\mathcal{R}_1, \mathcal{R}_2) \in \text{RV graph}\}$\tcp*[r]{Filter unfeasible}
+					\addFeasiblePlansFromRequests{$R^k_2, k, R'$}\;
+					\For{$q \in \{3,\dots, Q^k\}$}{
+						$R' = \{\mathcal{R}_i \cup \mathcal{R}_j \mid \forall\, \mathcal{R}_i, \mathcal{R}_j \in R^k_{q-1} \} $\;
+						$R' = \{\mathcal{R} \mid \forall \,\mathcal{R} \in R' \land |\mathcal{R}| = q \} $ \tcp*[r]{Select candidate q-request trips}
+						$R' = \{\mathcal{R} \mid \forall \,\mathcal{R} \in R' \land \forall r_i \in \,\mathcal{R},\; \mathcal{R} \setminus r_i \in R^k_{q-1}\}$  \tcp*[r]{Filter candidate unfeasible trips}
+						\addFeasiblePlansFromRequests{$R^k_q, k, R'$}\;
+					}
+				}
+			}
+		}	
+	\end{algorithm}
+ 
+\section{Integration of Real-Time Data}
+\label{sec:integration-real-time-data}
+
+Real-time data integration is crucial for the adaptability and responsiveness of the solution to dynamic operational conditions. Here, we explain how we integrate real-time data sources, such as GPS tracking, traffic information, and customer order updates, into the routing process. We discuss data collection methods, data processing pipelines, and their impact on routing decisions. In \Cref{lst:python}, we have a simple Python code example.
+
+\begin{lstlisting}[language=Python, caption=Python example, label=lst:python]
+import numpy as np
+    
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+    
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1) 
+
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+                
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)
+                
+                VT = np.zeros((n*m,1), int)
+    
+    return M
+\end{lstlisting}
+
+\section{Scalability and Performance Optimization}
+\label{sec:scalability-performance}
+
+Scalability is a vital consideration when addressing VRP variants in real-world logistics. In this subsection, we elaborate on techniques employed to enhance the solution's scalability and computational performance. This includes parallel computing strategies, memory optimization, and algorithmic enhancements tailored for large-scale instances.
+
+
+\section{Summary}
+\label{sec:solution-summary}
+
+To summarize, this chapter has provided a comprehensive overview of our solution approach to Company X's VRP variant. We have presented the mathematical formulation, discussed algorithm selection and design, explored real-time data integration, considered scalability and performance optimization, introduced evaluation metrics, and outlined our simulation and testing environment. The next chapter will present the experimental results and analyses, providing insights into the solution's effectiveness and its impact on Company X's logistics operations.
+
+\clearpage
+
+\chapter{Experimental Setup}
+\label{chap:experimental-setup}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+
+In this chapter we outline our experimental setup for assessing the proposed solution aimed at resolving Company X's VRP variant (detailed in \Cref{chap:solution-approach}). We cover crucial elements, including data collection and preprocessing (\Cref{sec:data-collection-preprocessing}), definition of diverse experimental scenarios (\Cref{sec:experimental-scenarios}), an overview of software tools and the computational environment (\Cref{sec:software-computational-environment}), the process of parameter tuning and sensitivity analysis (\Cref{sec:parameter-tuning}), the introduction of performance metrics (\Cref{sec:performance-metrics}), a step-by-step account of the experimental procedure (\Cref{sec:experimental-procedure}), and methods for data validation and sensitivity analysis (\Cref{sec:data-validation-sensitivity-analysis}). This chapter establishes the foundation for evaluating the effectiveness of our solution in tackling the real-world challenges posed by Company X's VRP variant, encompassing data management, scenario design, computational resources, parameter optimization, performance measurement, experimental procedures, and data quality assurance.
+
+\section{Data Collection and Preprocessing}
+\label{sec:data-collection-preprocessing}
+
+Data is a critical component of our experimental setup. In this section, we detail the sources of data related to Company X's VRP operations. We explain the data collection process, including how we gathered information on customer locations, vehicle capacities, time windows, and other relevant parameters. Additionally, we describe any data preprocessing steps undertaken to clean and prepare the dataset for experimentation.
+
+\section{Experimental Scenarios}
+\label{sec:experimental-scenarios}
+
+To comprehensively assess the proposed solution, we define a set of experimental scenarios that represent different operational conditions and challenges faced by Company X. These scenarios serve as the basis for our experimentation and performance evaluation. In this section, we outline each scenario, specifying the key parameters and constraints associated with them.
+
+\section{Software and Computational Environment}
+\label{sec:software-computational-environment}
+
+The choice of software tools and the computational environment significantly impact the experimental results. In this section, we provide an overview of the software packages and programming languages used for implementing the proposed solution. We also detail the specifications of the hardware and computational resources employed in our experiments, ensuring transparency and reproducibility.
+
+\section{Parameter Tuning}
+\label{sec:parameter-tuning}
+
+Many optimization algorithms and heuristics involve adjustable parameters that can influence their performance. We discuss the process of parameter tuning, including the methodology used to determine optimal parameter settings for our solution. Additionally, we address how sensitivity analyses were conducted to assess the robustness of the solution to parameter variations.
+
+\section{Performance Metrics}
+\label{sec:performance-metrics}
+
+To evaluate the effectiveness of the proposed solution, we define a set of performance metrics that measure various aspects of solution quality, efficiency, and robustness. In this section, we introduce and explain the performance metrics used in our experiments, including metrics related to solution quality (e.g., route length, customer service time) and computational efficiency (e.g., runtime, convergence).
+
+\section{Experimental Procedure}
+\label{sec:experimental-procedure}
+
+This section outlines the step-by-step procedure followed during the experimentation phase. We describe how the proposed solution was applied to the defined experimental scenarios, including any variations or repetitions to ensure statistical validity. We also detail the methodology for comparing and analyzing the results obtained from different scenarios.
+
+\section{Data Validation and Sensitivity Analysis}
+\label{sec:data-validation-sensitivity-analysis}
+
+Data quality and reliability are paramount in our experimental setup. We discuss the methods used for data validation and verification, ensuring that the experimental results are based on accurate and representative data. Additionally, we present the results of sensitivity analyses conducted to assess the impact of data uncertainties on solution performance.
+
+By providing a comprehensive overview of our experimental setup in this chapter, we establish the foundation for evaluating the proposed solution in the subsequent chapters.
+
+\section{Summary}
+\label{sec:experimental-summary}
+
+In this chapter, we have presented the experimental setup and methodology that will guide the evaluation and validation of our proposed solution for addressing Company X's VRP variant. We have outlined the data collection and preprocessing procedures, described the defined experimental scenarios, and provided insights into the software tools and computational environment used.
+
+The chapter has also covered parameter tuning, where we discussed the process of optimizing algorithmic parameters, ensuring the robustness and adaptability of our solution. Additionally, we introduced a set of performance metrics, which will be used to measure the quality and efficiency of our solution in different experimental scenarios.
+
+Furthermore, we detailed the experimental procedure, emphasizing the steps taken to ensure consistent and reliable results. We highlighted the importance of data validation and sensitivity analysis, as these processes are crucial for maintaining data integrity and assessing the solution's resilience to uncertainties.
+
+With the experimental setup in place, we are now well-prepared to execute the experiments and evaluate the performance of our proposed solution. The subsequent chapters will delve into the results and analyses derived from these experiments, ultimately contributing to a comprehensive understanding of the effectiveness of our solution for Company X's VRP variant.
+
+\clearpage
+
+\chapter{Results and Discussions}
+\label{chap:results-discussions}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+
+This chapter presents the results of the rigorous experiments conducted to assess the proposed solution for addressing the Vehicle Routing Problem (VRP) variant encountered at Company X. The presentation of results is structured as follows:
+
+\section{Baseline Performance}
+\label{sec:baseline-performance}
+
+To establish a benchmark for our proposed solution, we conducted experiments using standard VRP instances. The purpose of this assessment is to compare the performance of our solution against existing algorithms commonly employed in the field. Metrics such as solution quality, computational efficiency, and scalability were analyzed to provide a comprehensive evaluation.
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Subfigure A}
+    \label{fig:subfiga}
+  \end{subfigure}
+  \hspace{0.1\textwidth}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Subfigure B}
+    \label{fig:subfigb}
+  \end{subfigure}
+  
+  \caption{Main Figure with Two Subfigures.}
+  \label{fig:mainfig}
+\end{figure}
+
+In  \Cref{fig:mainfig}, we can see two subfigures, \Cref{fig:subfiga} and \Cref{fig:subfigb}, each with its own subscription.
+
+\section{Scenario-Specific Analysis}
+\label{sec:scenario-analysis}
+
+In the "Scenario-Specific Analysis" section, we delve into the outcomes of experiments designed to simulate real-world operational conditions at Company X. Each scenario was meticulously crafted to represent distinct challenges and constraints. Our analysis encompasses key metrics such as route efficiency, adherence to time windows, and resource utilization, shedding light on the solution's performance in various operational contexts.
+
+\section{Comparison with Previous Approaches}
+\label{sec:comparison-previous-approaches}
+
+This section involves benchmarking our proposed solution against established methods and approaches considered or utilized by Company X in the past. The assessment focuses on critical aspects including solution quality, computational efficiency, and practical feasibility. By conducting this comparative analysis, we highlight the advantages and enhancements introduced by our approach.
+
+\section{Sensitivity Analysis}
+\label{sec:sensitivity-analysis}
+
+The "Sensitivity Analysis" section explores the resilience of our solution to variations in parameters and data uncertainties. Extensive sensitivity analyses were conducted, focusing on key algorithmic parameters. The objective was to evaluate how variations impact solution quality and performance, ensuring the adaptability and robustness of our solution in dynamic operational environments.
+
+\section{Discussion of Findings}
+\label{sec:discussion-findings}
+
+In the "Discussion of Findings" section, we embark on a comprehensive and critical examination of the experimental results obtained through our rigorous evaluation of the proposed solution for addressing Company X's VRP variant. This in-depth discussion is instrumental in shedding light on the strengths and limitations of our solution, thereby contributing to a holistic understanding of its applicability and impact. The key components of this section include:
+
+\subsection{Performance Metrics Analysis}
+\label{subsec:performance-metrics-analysis}
+
+In this subsection, we delve into a meticulous analysis of the performance metrics employed to evaluate our solution. We interpret the quantitative data generated during the experiments, scrutinizing metrics related to solution quality, computational efficiency, and robustness. We identify trends, patterns, and notable outcomes, highlighting how our solution excels in optimizing vehicle routing, reducing costs, enhancing customer service, and ensuring computational efficiency.
+
+\subsection{Strengths of the Proposed Solution}
+\label{subsec:strengths-proposed-solution}
+
+The "Strengths of the Proposed Solution" subsection provides a detailed exposition of the notable accomplishments and advantages exhibited by our solution. We celebrate its effectiveness in addressing the complexities of Company X's VRP variant, emphasizing how it surpasses existing algorithms and benchmarks. Specifically, we illuminate how our solution optimizes routing operations, improves operational efficiency, and, importantly, enhances the overall customer experience.
+
+\subsection{Limitations and Areas for Improvement}
+\label{subsec:limitations-areas-improvement}
+
+Acknowledging that no solution is without its limitations, the "Limitations and Areas for Improvement" subsection candidly addresses the challenges and constraints observed during our experimentation. We discuss scenarios or conditions where the solution may exhibit suboptimal performance and outline avenues for refinement. This open discourse is crucial in guiding further research and development efforts aimed at bolstering our solution's adaptability and versatility.
+
+\subsection{Interpretation of Scenario-Specific Results}
+\label{subsec:interpretation-scenario-specific-results}
+
+Each experimental scenario presents a unique set of challenges, and in the "Interpretation of Scenario-Specific Results" subsection, we provide scenario-specific insights. We dissect how our solution adapts to varying operational conditions, such as fluctuations in demand, intricate time window constraints, or resource limitations. By closely examining the outcomes in these scenarios, we gain a granular understanding of the solution's performance nuances, thereby enhancing its real-world applicability.
+
+\subsection{Robustness and Sensitivity Analysis}
+\label{subsec:robustness-sensitivity-analysis}
+
+Our solution's resilience to uncertainties and parameter variations is a vital aspect of its effectiveness. In the "Robustness and Sensitivity Analysis" subsection, we elaborate on the results obtained from sensitivity analyses. We discuss how the solution maintains its reliability and stability in the face of changing parameters and data uncertainties. This resilience underscores its suitability for the dynamic logistics landscape at Company X.
+
+\subsection{Practical Implications and Real-World Applicability}
+\label{subsec:practical-implications-applicability}
+
+The "Practical Implications and Real-World Applicability" subsection bridges the gap between our research and its practical implementation at Company X. We discuss how the insights gained from our findings can be translated into actionable strategies for optimizing logistics operations. We emphasize the potential for cost savings, improved route planning, and enhanced customer service, highlighting the tangible benefits our solution offers to Company X.
+
+
+\section{Summary}
+\label{sec:experimental-results-summary}
+
+In conclusion, this chapter summarizes the significant findings derived from our extensive experimental evaluation. It highlights the strengths and weaknesses of our proposed solution, its performance across diverse scenarios, and its comparative advantages over existing approaches.
+
+\clearpage
+
+\chapter{Conclusions and Recommendations}
+\label{chap:conclusions-recommendations}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+
+This concluding chapter encapsulates the key insights, findings, and recommendations stemming from our comprehensive exploration of the VRP variant faced by Company X. We structure this chapter as follows:
+
+\section{Summary of Findings}
+\label{sec:summary-findings}
+
+The "Summary of Findings" section provides a concise yet comprehensive overview of the results obtained from our extensive research and experimentation. We have examined Company X's VRP variant from various angles, and the main findings are as follows:
+
+\begin{itemize}
+    \item Our proposed solution demonstrates remarkable efficacy in optimizing vehicle routing operations at Company X. It consistently outperforms existing algorithms, showcasing significant improvements in terms of solution quality and computational efficiency.
+
+    \item Scenario-specific analyses reveal the solution's adaptability to a range of operational conditions. Whether facing varying demand, time window constraints, or resource limitations, our solution consistently delivers reliable and efficient routes.
+
+    \item Comparative assessments against previous approaches underscore the substantial advantages our solution offers. Notably, it achieves cost reductions, improves delivery accuracy, and enhances overall operational efficiency.
+
+    \item Sensitivity analyses confirm the robustness of our solution. It exhibits resilience to parameter variations and data uncertainties, ensuring its suitability for the dynamic logistics environment at Company X.
+\end{itemize}
+
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+In the "Conclusions" section, we draw overarching conclusions from our study of Company X's VRP variant. Our work has shed light on several critical aspects:
+
+\begin{itemize}
+    \item The proposed solution is highly effective in addressing Company X's VRP variant. It not only optimizes vehicle routing but also enhances customer service and reduces operational costs, demonstrating its potential for significant impact.
+
+    \item The adaptability of our solution to diverse operational scenarios positions it as a versatile tool for Company X. Whether dealing with fluctuating demand, complex time windows, or evolving logistical challenges, the solution consistently performs at a high level.
+
+    \item The comparative analysis reveals that our solution surpasses previous approaches. Its ability to provide cost-efficient routes while meeting customer expectations positions it as a valuable asset in Company X's logistics operations.
+
+    \item Sensitivity analyses confirm that our solution remains robust in the face of uncertainties, making it well-suited for the ever-changing logistics landscape.
+\end{itemize}
+
+
+\section{Recommendations}
+\label{sec:recommendations}
+
+Our "Recommendations" section outlines actionable suggestions based on our research findings and insights. We propose the following recommendations for Company X:
+
+\begin{itemize}
+    \item \textbf{Implementation}: We recommend the full-scale implementation of our proposed solution into Company X's logistics operations. This move will enable the company to reap the benefits of enhanced routing efficiency, cost savings, and improved customer service.
+
+    \item \textbf{Operational Enhancements}: To maximize the solution's impact, we suggest operational enhancements. These may include optimizing vehicle fleets, revising delivery schedules, and aligning staffing levels with demand fluctuations.
+
+    \item \textbf{Integration with IT Infrastructure}: Integrating the solution with Company X's IT infrastructure is crucial. This step ensures real-time monitoring, data exchange, and seamless adaptation to changing conditions.
+
+    \item \textbf{Continuous Monitoring and Evaluation}: We recommend establishing a process for continuous monitoring and evaluation. Regular assessments of the solution's performance will enable proactive adjustments and refinements.
+
+    \item \textbf{Training and Knowledge Transfer}: Ensuring that Company X's logistics team is well-trained in using the solution is essential. Knowledge transfer sessions and ongoing support will maximize the solution's effectiveness.
+\end{itemize}
+
+
+\section{Future Research Directions}
+\label{sec:future-research}
+
+In the "Future Research Directions" section, we identify promising avenues for further research in the realm of Company X's VRP variant. Our study has highlighted areas that merit continued investigation:
+
+\begin{itemize}
+    \item \textbf{Dynamic Routing Optimization}: Exploring dynamic routing optimization techniques to address real-time changes in demand and traffic conditions.
+    
+    \item \textbf{Integration of Emerging Technologies}: Investigating the integration of emerging technologies such as IoT and AI for enhanced route planning and monitoring.
+    
+    \item \textbf{Sustainability Considerations}: Examining how to incorporate sustainability considerations into vehicle routing to reduce environmental impact.
+    
+    \item \textbf{Multi-Objective Optimization}: Exploring multi-objective optimization approaches that balance cost, efficiency, and customer service.
+    
+    \item \textbf{Global Logistics Strategy}: Investigating the implications of the proposed solution on Company X's global logistics strategy.
+\end{itemize}
+
+
+These research directions will contribute to ongoing advancements in solving complex VRP variants and further improving logistics management.
+
+\section{Final Remarks}
+\label{sec:final-remarks}
+
+In our "Final Remarks" section, we express our profound gratitude for the opportunity to collaborate with Company X on this challenging VRP variant. This partnership has allowed us to contribute to the optimization of logistics operations and the enhancement of customer service quality. We extend our appreciation to all stakeholders who have been instrumental in the success of this study.
+
+This chapter concludes our exploration of Company X's VRP variant, encapsulating its implications, actionable recommendations, and prospects for future research. Our aim is to provide a roadmap for optimizing logistical operations, enhancing service quality, and achieving cost-efficiency in the dynamic world of logistics management.
+
+\clearpage
+
+%\chapter*{Appendices}\label{ch:appendices}\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
+
+
+\begin{appendices}
+
+\chapter{The first appendix} \label{appendix-a}
+
+This is the first appendix. In  \Cref{fig:mainfig_a}, we can see two subfigures, \Cref{fig:subfiga_a} and \Cref{fig:subfigb_a}, each with its own subscription. \lipsum[2-11]
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Subfigure A}
+    \label{fig:subfiga_a}
+  \end{subfigure}
+  \hspace{0.1\textwidth}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Subfigure B}
+    \label{fig:subfigb_a}
+  \end{subfigure}
+  
+  \caption{Main Figure with Two Subfigures.}
+  \label{fig:mainfig_a}
+\end{figure}
+
+
+
+\end{appendices}
+\backmatter
+
+\bibliography{references}
+
+\end{document}

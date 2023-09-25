@@ -1,0 +1,102 @@
+\ProvidesPackage{iem}[2023/09/25 v.01 for UTwente MSc/BSc IEM]
+
+\usepackage{watermark}
+
+\renewcommand{\today}{\ifcase \month \or January\or February\or  %
+March\or April\or May \or June\or July\or August\or September\or %
+October\or November\or December\fi, \number \year} 
+
+% for cover page:
+\newcommand*{\coverauthor}[1]{\gdef\@coverauthor{#1}}
+\newcommand*{\firstsupervisor}[1]{\gdef\@firstsupervisor{#1}}
+\newcommand*{\secondsupervisor}[1]{\gdef\@secondsupervisor{#1}}
+\newcommand*{\companysupervisor}[1]{\gdef\@companysupervisor{#1}}
+\newcommand*{\companyname}[1]{\gdef\@companyname{#1}}
+\newcommand*{\covertitle}[1]{\gdef\@covertitle{#1}}
+\newcommand*{\doctype}[1]{\gdef\@doctype{#1}}
+\newcommand*{\makecoverpage}{%
+\thispagestyle{empty} % Remove header and footer
+
+\thiswatermark{%
+  \put(-72,-790){\includegraphics{logos/Omslagen vers1 7.pdf}}%
+  %\put(-60,-740){\includegraphics[height=2cm]{logos/UT_Logo_Sta_Black_EN.eps}}%
+  % Use the company logo or remove this line
+  %\put(50,-740){\includegraphics[height=2cm]{logos/generic_company_logo.eps}} % Image by soepratman on Freepik
+  } 
+
+
+
+\newcommand*{\leftspace}{5.0cm}
+
+\hspace{\leftspace}\parbox[t]{10.8cm}{\centering
+\vspace{2.5cm}
+
+\includegraphics[height=1cm]{logos/UT_Logo_Black_EN.eps}
+
+\vspace{1cm}
+{\large \@doctype}\\
+}
+
+\vfill
+\hspace{\leftspace}\parbox[t]{10.8cm}{%
+    \centering
+\Large{\bfseries\@covertitle}\\
+%\Large{\bfseries\@covertitle}
+}
+
+\hspace{\leftspace}\parbox[t]{10.8cm}{
+\centering
+\vspace{1cm}
+
+\textit{by}
+
+\vspace{0.5cm}
+
+{\large \@coverauthor}
+
+\vspace{0.5cm}
+
+{Industrial Engineering and Management}\\
+\footnotesize{Specialization Production and Logistics Management}\\
+\footnotesize{Orientation Supply Chain and Transportation Management}\\
+\footnotesize{Faculty of Behavioural, Management and Social Sciences}\\
+
+
+}
+
+\vspace{1cm}
+
+
+
+
+\hspace{\leftspace}\parbox[t]{10.8cm}{
+
+
+\textbf{Examination committee}\\
+\@firstsupervisor\\
+\@secondsupervisor\\
+\emph{University of Twente}\\
+
+\vspace{0.5cm}
+
+\textbf{External supervision}\\
+\@companysupervisor\\
+\emph{\@companyname}\\
+
+
+
+
+}
+
+
+\vfill
+
+\hspace{\leftspace}\parbox[t]{10.8cm}{%
+    \centering
+\the\year{}
+}
+
+\newpage
+\thispagestyle{empty}
+} % end makecoverpage
+
