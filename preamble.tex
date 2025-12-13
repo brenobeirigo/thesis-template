@@ -128,15 +128,20 @@
 \usepackage[title, titletoc, header]{appendix}
 
 % Import SVGs
-% Note: some TeX distributions ship an older svg.sty that
-% does not support the `outputdir` option; use defaults.
-\usepackage[inkscapepath="figures-converted"]{svg} % If images do not work (e.g., missing pattern) convert to PNG using inkscapeformat=png
+% Import SVG images with options:
+% - inkscapepath="figures-converted": Sets the directory where converted figures are stored.
+% - inkscapelatex=false: Disables the use of LaTeX for text in SVGs (renders text as part of the image).
+% - inkscapeformat=png: Converts SVGs to PNG format instead of PDF (uncomment if needed).
+\usepackage[inkscapepath="figures-converted",inkscapelatex=false]{svg}
 
+% Allow the inclusion of EPS (Encapsulated PostScript) graphics by automatically converting them to PDF format.
 \usepackage{epstopdf}
-%\graphicspath{{figures/}} % Tells LaTeX to look in the Images/ folder for figures
-\epstopdfsetup{outdir=./figures-converted/} % Tells epstopdf to save converted PDFs here
-% LISTS
+% Set the output directory for the converted PDF figures to "./figures-converted/"
+\epstopdfsetup{outdir=./figures-converted/}
 
+%\graphicspath{{figures/}} % Tells LaTeX to look in the Images/ folder for figures
+
+% LISTS
 % \begin{enumerate}[I] = I, II, III, etc.
 % \begin{enumerate}[i] = i, ii, iii, etc.
 \usepackage{enumerate}
