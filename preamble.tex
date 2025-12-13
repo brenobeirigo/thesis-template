@@ -52,13 +52,15 @@
 % - Unicode support
 \usepackage[utf8]{inputenc}
 
-% Pretty fonts
-\usepackage{mathpazo} % Changes the default text font to the "Palatino" typeface
+% Pretty fonts (Palatino-like, modern)
+\usepackage{newpxtext}
+\usepackage{newpxmath}
 
-% Bibliography
-% - https://www.utwente.nl/en/service-portal/university-library/referencing-copyright/referencing-plagiarism
-\usepackage[authoryear]{natbib}
-\bibliographystyle{apalike} % Other styles: plain, unsrt, abbrvnat, and apalike.
+
+% Bibliography (modern workflow)
+% - Use biblatex for flexible, robust citation management
+\usepackage[backend=biber,style=authoryear,natbib=true]{biblatex}
+\addbibresource{references.bib}
 
 
 % Allow click-through chapters, sections, and references
@@ -66,7 +68,6 @@
 
 % Format numbers
 \usepackage[group-separator={,}]{siunitx} % If commas as separators
-\usepackage{siunitx} % https://texdoc.org/serve/siunitx/0
 
 
 % PDF metadata with table of contents, list of figures, and list of tables clickable
@@ -104,20 +105,20 @@
 \fancypagestyle{SectionFirstPage}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % Use this pagestyle to hide headers on the first page of sections
 
 % Improves document typography through enhanced justification, character protrusion, font expansion, and other micro-typographic adjustments, resulting in increased readability and a more polished appearance
-%\usepackage{microtype}
+\usepackage{microtype}
 
 % Enhanced way to reference and format cross-references TODO
 \usepackage{cleveref}
 \crefname{section}{section}{sections}
 \Crefname{section}{Section}{Sections}
 \crefname{algorithm}{algorithm}{algorithms}
-\crefname{algorithm}{Algorithm}{Algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
 \crefname{figure}{figure}{figures}
 \Crefname{figure}{Figure}{Figures}
 \crefname{chapter}{chapter}{chapters}
 \Crefname{chapter}{Chapter}{Chapters}
 \crefname{table}{table}{tables}
-\Crefname{Table}{Table}{Tables}
+\Crefname{table}{Table}{Tables}
 \crefname{lstlisting}{listing}{listings}
 \Crefname{lstlisting}{Listing}{Listings}
 
@@ -139,7 +140,7 @@
 % Set the output directory for the converted PDF figures to "./figures-converted/"
 \epstopdfsetup{outdir=./figures-converted/}
 
-%\graphicspath{{figures/}} % Tells LaTeX to look in the Images/ folder for figures
+\graphicspath{{figures/}} % Tells LaTeX to look in the Images/ folder for figures
 
 % LISTS
 % \begin{enumerate}[I] = I, II, III, etc.

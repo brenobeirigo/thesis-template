@@ -20,3 +20,5 @@
 *.acr
 *.gls
 figures-converted
+*.bcf
+*.run.xml
