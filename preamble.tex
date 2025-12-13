@@ -64,11 +64,6 @@
 % Allow click-through chapters, sections, and references
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
 
-% Format numbers
-\usepackage[group-separator={,}]{siunitx} % If commas as separators
-\usepackage{siunitx} % https://texdoc.org/serve/siunitx/0
-
-
 % PDF metadata with table of contents, list of figures, and list of tables clickable
 \hypersetup{
   pdfauthor={Your Name},
@@ -126,21 +121,6 @@
 
 % Control the appendix
 \usepackage[title, titletoc, header]{appendix}
-
-% Import SVGs
-% Note: some TeX distributions ship an older svg.sty that
-% does not support the `outputdir` option; use defaults.
-\usepackage[inkscapepath="figures-converted"]{svg} % If images do not work (e.g., missing pattern) convert to PNG using inkscapeformat=png
-
-\usepackage{epstopdf}
-%\graphicspath{{figures/}} % Tells LaTeX to look in the Images/ folder for figures
-\epstopdfsetup{outdir=./figures-converted/} % Tells epstopdf to save converted PDFs here
-% LISTS
-
-% \begin{enumerate}[I] = I, II, III, etc.
-% \begin{enumerate}[i] = i, ii, iii, etc.
-\usepackage{enumerate}
-
 
 \usepackage[acronym]{glossaries}
 \makeglossaries
