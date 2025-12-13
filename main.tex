@@ -25,6 +25,7 @@
 
 
 \setcounter{page}{0}
+
 \chapter*{Abstract}
 
 Addressing Company X's complex logistics challenges involving the Vehicle Routing Problem (VRP), this research introduces a tailored solution designed to optimize delivery operations. The VRP presents a formidable task, requiring efficient routing for an extensive fleet of delivery vehicles that profoundly affects transportation costs and customer satisfaction. This study proposes a comprehensive approach that integrates advanced optimization algorithms and real-time data analysis to craft highly efficient vehicle routes, ultimately reducing costs and enhancing delivery services.
@@ -32,6 +33,7 @@ The proposed solution encompasses six key elements. Firstly, route optimization 
 Enhancing the customer experience constitutes the third aspect, providing precise delivery time estimates and bolstering reliability to elevate customer satisfaction, cultivate loyalty, and enhance Company X's reputation. Efficient resource allocation forms the fourth cornerstone, with an intelligent system optimizing delivery assignments, minimizing idle time, and maximizing resource utilization.
 Additionally, the solution contributes to environmental sustainability, aligning with Company X's eco-conscious objectives. By reducing fuel consumption and minimizing the organization's carbon footprint, it furthers sustainability goals. Economically, the solution emphasizes cost efficiency, with preliminary assessments indicating substantial savings through optimized routes, reduced fuel consumption, and improved resource management.
 In conclusion, this research envisions a transformative impact on Company X's logistics and supply chain operations, positioning the company as an industry leader. Successful implementation has the potential to significantly reduce operational costs, enhance overall efficiency, fortify Company X's competitive edge, and advance environmental responsibility and customer satisfaction.
+
 
 \chapter*{Management Summary}
 
@@ -94,6 +96,7 @@ Solving the VRP is imperative for Company X to remain competitive, reduce costs,
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter*{Preface}
 
 Dear reader,\\
@@ -322,7 +325,7 @@ This literature study aims to equip us with the necessary background knowledge a
 
 In this section, we present an overview of the basic concepts and fundamental principles of the \acrfull{vrp}. We discuss the key elements, such as the problem formulation, objectives, constraints, and various VRP variants that have been studied in the literature. This foundational knowledge is essential for understanding the context in which Company X's specific VRP variant operates.
 
-In the field of logistics and transportation, the \acrshort{vrp} is a well-known problem. It involves optimizing the routes of a fleet of vehicles to deliver goods to a set of \acrshort{customer}s. The \acrshort{dvrp}, a variant of the \acrshort{vrp}, additionally considers the pickup and drop-off of \gls{customer}s.
+In the field of logistics and transportation, the \acrshort{vrp} is a well-known problem. It involves optimizing the routes of a fleet of vehicles to deliver goods to a set of \glspl{customer}. The \acrshort{dvrp}, a variant of the \acrshort{vrp}, additionally considers the pickup and drop-off of \gls{customer}s.
 
 A key challenge in solving the \acrshort{vrp} is finding a \gls{feasible-solution} that minimizes the total travel distance while adhering to various constraints. The term \gls{route} refers to the sequence of locations visited by a vehicle during a VRP solution. The \acrshort{mvrp} deals with multiple vehicles in the problem, while the \acrshort{vrptw} introduces time windows for deliveries.
 
@@ -748,26 +751,26 @@ This chapter presents the results of the rigorous experiments conducted to asses
 \label{sec:baseline-performance}
 
 To establish a benchmark for our proposed solution, we conducted experiments using standard VRP instances. The purpose of this assessment is to compare the performance of our solution against existing algorithms commonly employed in the field. Metrics such as solution quality, computational efficiency, and scalability were analyzed to provide a comprehensive evaluation.
-
-\begin{figure}
-  \centering
-  \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{example-image-a}
-    \caption{Subfigure A}
-    \label{fig:subfiga}
-  \end{subfigure}
-  \hspace{0.1\textwidth}
-  \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{example-image-b}
-    \caption{Subfigure B}
-    \label{fig:subfigb}
-  \end{subfigure}
-  
-  \caption{Main Figure with Two Subfigures.}
-  \label{fig:mainfig}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includesvg[width=0.95\linewidth]{figures/pfit-example-paper-sav-in.svg}
+        \caption{Subfigure A}
+        \label{fig:subfiga}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includesvg[width=0.95\linewidth]{figures/pfit-example-paper-sav-out.svg}
+        \caption{Subfigure B}
+        \label{fig:subfigb}
+    \end{subfigure}
+    \caption{Main Figure with Two Subfigures.}
+    \label{fig:mainfig-svg}
 \end{figure}
 
-In  \Cref{fig:mainfig}, we can see two subfigures, \Cref{fig:subfiga} and \Cref{fig:subfigb}, each with its own subscription.
+In  \Cref{fig:mainfig-svg}, we can see two subfigures, \Cref{fig:subfiga} and \Cref{fig:subfigb}, each with its own subscription.
 
 \section{Scenario-Specific Analysis}
 \label{sec:scenario-analysis}
