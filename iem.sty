@@ -2,9 +2,12 @@
 
 \usepackage{watermark}
 
-\renewcommand{\today}{\ifcase \month \or January\or February\or  %
-March\or April\or May \or June\or July\or August\or September\or %
-October\or November\or December\fi, \number \year} 
+% (optional but recommended: you already rely on \includegraphics in the watermark)
+\RequirePackage{graphicx}
+
+\renewcommand{\today}{\ifcase \month \or January\or February\or%
+ March\or April\or May\or June\or July\or August\or September\or%
+ October\or November\or December\fi, \number\year}
 
 % for cover page:
 \newcommand*{\coverauthor}[1]{\gdef\@coverauthor{#1}}
@@ -14,89 +17,75 @@ October\or November\or December\fi, \number \year}
 \newcommand*{\companyname}[1]{\gdef\@companyname{#1}}
 \newcommand*{\covertitle}[1]{\gdef\@covertitle{#1}}
 \newcommand*{\doctype}[1]{\gdef\@doctype{#1}}
+
+% cover layout helpers (do NOT define these inside \makecoverpage)
+\newlength{\coverleft}
+\setlength{\coverleft}{5cm}
+
+\newcommand{\coverblock}[1]{%
+  \noindent\hspace*{\coverleft}%
+  \parbox[t]{\dimexpr\textwidth-\coverleft\relax}{#1}%
+  \par
+}
+
 \newcommand*{\makecoverpage}{%
-\thispagestyle{empty} % Remove header and footer
+  \begingroup
+  \thispagestyle{empty} % Remove header and footer
+  \setlength{\parindent}{0pt}
 
-\thiswatermark{%
+  \thiswatermark{%
     \put(-72,-790){\includegraphics{logos/ut_cover_7.pdf}}%
-  %\put(-60,-740){\includegraphics[height=2cm]{logos/ut_logo_sta_black_en.eps}}%
-  % Use the company logo or remove this line
-  %\put(50,-740){\includegraphics[height=2cm]{logos/company_logo.eps}} % Image by soepratman on Freepik
-  } 
+    %\put(-60,-740){\includegraphics[height=2cm]{logos/ut_logo_sta_black_en.eps}}%
+    %\put(50,-740){\includegraphics[height=2cm]{logos/company_logo.eps}}%
+  }
 
+  \coverblock{\centering
+    \vspace{2.5cm}
+    \includegraphics[height=1cm]{logos/ut_logo_sta_black_en.eps}\par
+    \vspace{1cm}
+    {\large \@doctype\par}
+  }
 
+  \vfill
 
-\newcommand*{\leftspace}{5.0cm}
+  \coverblock{\centering
+    {\Large\bfseries \@covertitle\par}
+  }
 
-\hspace{\leftspace}\parbox[t]{10.8cm}{\centering
-\vspace{2.5cm}
+  \coverblock{\centering
+    \vspace{1cm}
+    \textit{by}\par
+    \vspace{0.5cm}
+    {\large \@coverauthor\par}
+    \vspace{0.5cm}
+    Industrial Engineering and Management\par
+    \footnotesize Specialization Production and Logistics Management\par
+    \footnotesize Orientation Supply Chain and Transportation Management\par
+    \footnotesize Faculty of Behavioural, Management and Social Sciences\par
+  }
 
-\includegraphics[height=1cm]{logos/ut_logo_sta_black_en.eps}
+  \vspace{1cm}
 
-\vspace{1cm}
-{\large \@doctype}\\
-}
+  \coverblock{%
+    \textbf{Examination committee}\par
+    \@firstsupervisor\par
+    \@secondsupervisor\par
+    \emph{University of Twente}\par
 
-\vfill
-\hspace{\leftspace}\parbox[t]{10.8cm}{%
-    \centering
-\Large{\bfseries\@covertitle}\\
-%\Large{\bfseries\@covertitle}
-}
+    \vspace{0.5cm}
 
-\hspace{\leftspace}\parbox[t]{10.8cm}{
-\centering
-\vspace{1cm}
+    \textbf{External supervision}\par
+    \@companysupervisor\par
+    \emph{\@companyname}\par
+  }
 
-\textit{by}
+  \vfill
 
-\vspace{0.5cm}
+  \coverblock{\centering
+    \the\year\par
+  }
 
-{\large \@coverauthor}
-
-\vspace{0.5cm}
-
-{Industrial Engineering and Management}\\
-\footnotesize{Specialization Production and Logistics Management}\\
-\footnotesize{Orientation Supply Chain and Transportation Management}\\
-\footnotesize{Faculty of Behavioural, Management and Social Sciences}\\
-
-
-}
-
-\vspace{1cm}
-
-
-
-
-\hspace{\leftspace}\parbox[t]{10.8cm}{
-
-
-\textbf{Examination committee}\\
-\@firstsupervisor\\
-\@secondsupervisor\\
-\emph{University of Twente}\\
-
-\vspace{0.5cm}
-
-\textbf{External supervision}\\
-\@companysupervisor\\
-\emph{\@companyname}\\
-
-
-
-
-}
-
-
-\vfill
-
-\hspace{\leftspace}\parbox[t]{10.8cm}{%
-    \centering
-\the\year{}
-}
-
-\newpage
-\thispagestyle{empty}
+  \clearpage
+  \thispagestyle{empty}
+  \endgroup
 } % end makecoverpage
-

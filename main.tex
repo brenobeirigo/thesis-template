@@ -21,7 +21,10 @@
 
 \frontmatter
 
+
 \makecoverpage
+
+
 
 
 \setcounter{page}{0}
@@ -99,17 +102,19 @@ Solving the VRP is imperative for Company X to remain competitive, reduce costs,
 
 \chapter*{Preface}
 
-Dear reader,\\
+Dear reader,\par\bigskip
 
-\noindent 
-\lipsum[2-4]
-\\
+\noindent
+\lipsum[2-4] % Replace this part
 
-\hspace*{\fill} \textit{Name Surname}
+\begin{flushright}
+\textit{Name Surname}\\
+\textit{City}\\
+\textit{\today}
+\end{flushright}
 
-\hspace*{\fill} \textit{City}
-
-\hspace*{\fill} \textit{\today}
+\clearpage
+\thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
 
 
 \clearpage \thispagestyle{SectionFirstPage} % Hide headers on the first page of the section
